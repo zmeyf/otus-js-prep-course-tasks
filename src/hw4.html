@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<script>
+    // 1. Object, age
+    const user = {
+        name: 'John'
+    };
+    const userAge = +prompt("Type your age", "");
+    user['age'] = userAge;
+    console.log(user);
+
+// 2. Object copy
+    let admin = Object.assign({}, user, {role: 'admin'});
+    console.log(admin);
+
+// *separate variables
+//     let name = admin.name;
+//     let age = admin.age;
+//     let role = admin.role;
+    let {name, age, role} = admin;
+    console.log(name, age, role);
+
+</script>
+</body>
+</html>
