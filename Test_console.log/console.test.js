@@ -2,8 +2,12 @@
 // import { cons } from './console.js';
 const cons = require('./console.js');
 
-jest.spyOn(console, 'log').mockImplementation(() => {
-    return cons();
-});
+describe ('Test cons', () => {
+    it('returns "Hello, World!"', () => {
+        const logSpy = jest.spyOn(console, 'log').mockImplementation();
+        cons();
 
-expect(cons()).toEqual('Hello, World!');
+        expect(logSpy).toHaveBeenCalledWith('Hello, World!');
+        logSpy.mockRestore();
+    });
+});
