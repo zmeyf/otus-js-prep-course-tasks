@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>What's the weekday?</title></body>
+
+</head>
+<body>
+<div id="page"></div>
+<p style="text-align: center; color:blue" id="weekday"></p>
+<p style="text-align: center; color:green" id="minutes"></p>
+
+<script>
+    // 1. Output a weekday
+    const input = prompt("Enter a date (DD.MM.YYYY)","");
+    const [day, month, year] = input.split(".");
+    const inputDate = new Date(`${year}-${month}-${day}`)
+    const weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+    console.log(weekDays[inputDate.getDay()]);
+    document.getElementById('weekday').innerHTML = 'The weekday of your date is ' + weekDays[inputDate.getDay()] + '.';
+</script>
+</body>
+</html>
